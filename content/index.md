@@ -1,7 +1,9 @@
 ---
+publish: true
 title: Welcome!
 ---
-![[sunflower-banner.jpg]]
+
+![[attachments/sunflower-banner.jpg]]
 
 # Welcome to my notes!
 
