@@ -1,3 +1,277 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+$border-radius: 12px;
+$border-width: 1.75px;
+$moon-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1vb24taWNvbiBsdWNpZGUtbW9vbiI+PHBhdGggZD0iTTIwLjk4NSAxMi40ODZhOSA5IDAgMSAxLTkuNDczLTkuNDcyYy40MDUtLjAyMi42MTcuNDYuNDAyLjgwM2E2IDYgMCAwIDAgOC4yNjggOC4yNjhjLjM0NC0uMjE1LjgyNS0uMDA0LjgwMy40MDEiLz48L3N2Zz4=);
+$sun-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXN1bi1pY29uIGx1Y2lkZS1zdW4iPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjQiLz48cGF0aCBkPSJNMTIgMnYyIi8+PHBhdGggZD0iTTEyIDIwdjIiLz48cGF0aCBkPSJtNC45MyA0LjkzIDEuNDEgMS40MSIvPjxwYXRoIGQ9Im0xNy42NiAxNy42NiAxLjQxIDEuNDEiLz48cGF0aCBkPSJNMiAxMmgyIi8+PHBhdGggZD0iTTIwIDEyaDIiLz48cGF0aCBkPSJtNi4zNCAxNy42Ni0xLjQxIDEuNDEiLz48cGF0aCBkPSJtMTkuMDcgNC45My0xLjQxIDEuNDEiLz48L3N2Zz4=);
+$search-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyLjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtc2VhcmNoLWljb24gbHVjaWRlLXNlYXJjaCI+PHBhdGggZD0ibTIxIDIxLTQuMzQtNC4zNCIvPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48L3N2Zz4=);
+
+body {
+    letter-spacing: 0.01rem;
+}
+
+hr {
+    height: $border-width;
+}
+
+// Checkboxes
+
+input[type="checkbox"] {
+    border-radius: $border-radius;
+    border-width: $border-width;
+}
+
+input[type=checkbox]:checked:after {
+    height: 7px;
+    width: 3px;
+}
+
+// Code
+
+pre {
+    padding: 0 .8rem;
+}
+
+:not(pre)>code {
+    border-radius: $border-radius;
+    background: var(--light);
+    border: 1px solid var(--gray);
+    padding: .1rem .4rem;
+}
+
+// Links
+
+a.internal,
+a.internal-link-alias,
+a.external,
+.breadcrumb-element > a {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    text-decoration: underline 1px;
+}
+
+a.external .external-icon {
+    padding-left: 2px;
+}
+
+// Callouts
+
+.callout .callout-title {
+        gap: 0.6rem;
+}
+
+// Explorer
+
+.explorer-content ul li > a.active {
+    color: var(--secondary);
+}
+
+// Page title
+
+.page-title {
+    font-size: 1.6rem;
+
+    a {
+        font-weight: 700;
+    }
+}
+
+body[data-slug="index"] .article-title {
+    display: none;
+}
+
+@media (max-width:800px) {
+    h2.page-title {
+        display: none;
+    }
+}
+
+// Table of contents
+
+.toc ul li > a {
+    font-weight: 600;
+}
+
+// Search
+
+.search>.search-button {
+    border-width: $border-width;
+}
+
+.search>.search-container>.search-space>.search-layout>div {
+    border-radius: calc($border-radius - 2px) 0 0 calc($border-radius - 2px);
+}
+
+.search>.search-container>.search-space>input {
+    border-width: $border-width;
+}
+
+.search>.search-container>.search-space>.search-layout {
+    border-width: $border-width;
+}
+
+.search>.search-container>.search-space>.search-layout[data-preview]>div:first-child {
+    border-right-width: $border-width;
+}
+
+@media (max-width:800px) {
+    .search>.search-container>.search-space>.search-layout[data-preview]>div:first-child {
+        border-top-right-radius: calc($border-radius - 3px);
+    }
+
+    .search>.search-container>.search-space>.search-layout>.results-container .result-card:last-child {
+        border-bottom: none;
+    }
+}
+
+.search>.search-container>.search-space>.search-layout>.results-container .result-card {
+    border-bottom-width: $border-width;
+}
+
+.search>.search-container>.search-space>.ghost-text {
+    border-width: $border-width;
+}
+
+.search>.search-container>.search-space>.tag-suggestions {
+    border-width: $border-width;
+}
+
+// .search>.search-button svg {
+//     background-color: var(--darkgray);
+//     width: 18px;
+//     height: 18px;
+//     mask-image: $search-icon;
+// }
+
+.search>.search-button svg .search-path {
+    stroke-width: 2px;
+
+    path {
+        stroke-linecap: round;
+    }
+}
+
+.search>.search-container>.search-space>.search-layout>.results-container {
+
+    .result-card>h3 {
+        color: var(--dark);
+        font-weight: 600;
+    }
+
+    .result-card>p {
+        color: var(--dark);
+    }
+}
+
+// Dark mode
+
+body button.darkmode>svg {
+    display: none;
+}
+
+body button.darkmode {
+    width: 24px;
+    height: 24px;
+    border-radius: $border-radius;
+    background-color: var(--darkgray);
+    vertical-align: middle;
+}
+
+:root[saved-theme=dark] button.darkmode {
+    mask-image: $moon-icon;
+    -webkit-mask-image: $moon-icon;
+}
+
+:root[saved-theme=light] button.darkmode {
+    mask-image: $sun-icon;
+    -webkit-mask-image: $sun-icon;
+}
+
+// Set default border radius
+
+img,
+pre,
+audio,
+video,
+iframe.pdf,
+.search>.search-button,
+.search>.search-container>.search-space>:not(.ghost-text):not(.tag-suggestions),
+.note-properties,
+.note-properties .note-properties-tags .tag-link,
+.callout {
+    border-radius: $border-radius;
+}
+
+// Properties
+
+.note-properties {
+
+    // border-width: $border-width;
+    margin: 2rem 0;
+
+    .note-properties-header {
+        padding: .6rem .8rem;
+    }
+
+    .note-properties-key {
+        text-transform: uppercase;
+        color: var(--darkgray);
+    }
+
+    .note-properties-link:hover {
+        color: var(--tertiary);
+    }
+
+    .note-properties-tags .tag-link {
+        display: block;
+        border-radius: $border-radius;
+        border: 1px solid var(--secondary);
+        padding: .1rem .4rem;
+        margin-right: 0.4rem;
+        font-size: .85rem;
+        text-decoration: none;
+
+        &:hover {
+            color: var(--tertiary);
+            border-color: var(--tertiary);
+        }
+
+    }
+
+    .note-properties-tags .note-properties-separator {
+        display: none;
+    }
+
+}
+
+// Tags
+
+ul.tags {
+    list-style: none;
+    padding-left: 0;
+
+    li { 
+        display: inline-block;
+        margin-right: .4rem;
+    }
+
+    li > a {
+        display: block;
+        border-radius: $border-radius;
+        border: 1px solid var(--secondary);
+        padding: .1rem .4rem;
+        font-size: 0.85rem;
+        text-decoration: none;
+
+        &:hover {
+            border-color: var(--tertiary);
+        }
+    }
+}
+
+// Folder and tag pages
+
+li.section-li>.section {
+    grid-template-columns: fit-content(8em) 1fr 1fr;
+}
