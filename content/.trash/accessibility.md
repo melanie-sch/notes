@@ -1,4 +1,0 @@
----
-title: Accessibility
-draft: false
----
