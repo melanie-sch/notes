@@ -1,3 +1,201 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+$border-radius: 12px;
+$border-width: 1.75px;
+$search-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyLjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtc2VhcmNoLWljb24gbHVjaWRlLXNlYXJjaCI+PHBhdGggZD0ibTIxIDIxLTQuMzQtNC4zNCIvPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48L3N2Zz4=);
+
+body {
+    letter-spacing: 0.02rem;
+}
+
+hr {
+    height: $border-width;
+}
+
+// Checkboxes
+
+input[type="checkbox"] {
+    border-radius: $border-radius;
+    border-width: $border-width;
+}
+
+input[type=checkbox]:checked::after {
+    height: 7px;
+    width: 3px;
+}
+
+// Code
+
+pre {
+    padding: 0.8rem;
+}
+
+:not(pre)>code {
+    border-radius: $border-radius;
+    background: var(--light);
+    border: 1px solid var(--gray);
+    padding: .1rem .4rem;
+}
+
+// Links
+
+a.internal,
+a.internal-link-alias,
+a.external,
+.breadcrumb-element > a {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    text-decoration: underline 1px;
+}
+
+a.external .external-icon {
+    padding-left: 2px;
+}
+
+// Callouts
+
+.callout .callout-title {
+    gap: 0.6rem;
+}
+
+// Explorer
+
+.explorer-content ul li > a.active {
+    color: var(--secondary);
+}
+
+// Page title
+
+.page-title {
+    font-size: 1.6rem;
+
+    a {
+        font-weight: 700;
+    }
+}
+
+@media (max-width:800px) {
+    h2.page-title {
+        display: none;
+    }
+}
+
+// Table of contents
+
+.toc ul li > a {
+    font-weight: 600;
+}
+
+// Search
+
+.search>.search-button {
+    border-width: $border-width;
+}
+
+.search>.search-button svg {
+    background-color: var(--darkgray);
+    width: 18px;
+    height: 18px;
+    mask-image: $search-icon;
+}
+
+.search>.search-container>.search-space>.search-layout>.results-container {
+
+    .result-card>h3 {
+        color: var(--dark);
+        font-weight: 600;
+    }
+
+    .result-card>p {
+        color: var(--dark);
+    }
+}
+
+// Set default border radius
+
+img,
+pre,
+audio,
+video,
+iframe.pdf,
+.search>.search-button,
+.note-properties,
+.note-properties .note-properties-tags .tag-link,
+.callout {
+    border-radius: $border-radius;
+}
+
+// Properties
+
+.note-properties {
+
+    // border-width: $border-width;
+    margin: 2rem 0;
+
+    .note-properties-header {
+        padding: .6rem .8rem;
+    }
+
+    .note-properties-key {
+        text-transform: uppercase;
+        color: var(--darkgray);
+    }
+
+    .note-properties-link:hover {
+        color: var(--tertiary);
+    }
+
+    .note-properties-tags .tag-link {
+        display: block;
+        border-radius: $border-radius;
+        border: 1px solid var(--secondary);
+        padding: .1rem .4rem;
+        margin-right: 0.4rem;
+        font-size: .85rem;
+        text-decoration: none;
+
+        &:hover {
+            color: var(--tertiary);
+            border-color: var(--tertiary);
+        }
+
+    }
+
+    .note-properties-tags .note-properties-separator {
+        display: none;
+    }
+
+}
+
+// Tags
+
+ul.tags {
+    list-style: none;
+    padding-left: 0;
+
+    li { 
+        display: inline-block;
+        margin-right: .4rem;
+    }
+
+    li > a {
+        display: block;
+        border-radius: $border-radius;
+        border: 1px solid var(--secondary);
+        padding: .1rem .4rem;
+        font-size: 0.85rem;
+        text-decoration: none;
+
+        &:hover {
+            border-color: var(--tertiary);
+        }
+    }
+}
+
+// Folder and tag pages
+
+li.section-li>.section {
+    grid-template-columns: fit-content(8em) 1fr 1fr;
+}
+
