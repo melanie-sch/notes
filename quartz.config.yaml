@@ -137,6 +137,7 @@ plugins:
     enabled: true
     options:
       title: All notes
+      folderClickBehavior: collapse
     layout:
       position: left
       priority: 50
@@ -154,9 +155,9 @@ plugins:
       groupOptions:
         grow: true
   - source: "@quartz-community/backlinks"
-    enabled: false
+    enabled: true
     layout:
-      position: right
+      position: afterBody
       priority: 50
   - source: "@quartz-community/article-title"
     enabled: true
@@ -211,7 +212,8 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/melanie-sch/notes
+        LinkedIn: https://www.linkedin.com/in/melaniedschwartz/
+        Github: https://github.com/melanie-sch/notes
     layout:
       position: footer
       priority: 50
