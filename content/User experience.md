@@ -1,10 +1,10 @@
 ---
 title: User experience (UX)
 aliases:
-  - ux
+  - UX
 publish: true
 ---
-**User experience** is the overall experience a person has while interacting with a product.
+**User experience** is the overall experience a person has while interacting with a product or service.
 
 ## The UX design process
 

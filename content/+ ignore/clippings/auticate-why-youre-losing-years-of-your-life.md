@@ -7,4 +7,4 @@ url: https://youtube.com/watch?v=c4oA9IETWxA
 
 > We’re measuring our lives in hours, but our nervous systems are measuring them in cost.
 
-Basically a video essay on [[Spoon theory|spoon theory]].
+Basically a video essay on spoon theory.
