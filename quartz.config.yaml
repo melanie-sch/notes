@@ -212,7 +212,6 @@ plugins:
     enabled: true
     options:
       links:
-        LinkedIn: https://www.linkedin.com/in/melaniedschwartz/
         Github: https://github.com/melanie-sch/notes
     layout:
       position: footer
